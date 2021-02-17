@@ -1,0 +1,48 @@
+---
+type: CheckConfig
+api_version: core/v2
+metadata:
+  name: check-http
+  annotations:
+    # Required key: io.sensu.ansible.config.actions  
+    #   Value: stringified json array of Job Template Requests
+    #          all request attributes are optional
+    # Each Job Template Request may consist of:
+    #    Either template_name and/or template_id, with template_id taking precedence
+    #    Either inventory_name and/or inventory_id, with inventory_id taking precedence
+    #    Matching Sensu event occurrence conditions
+    #    Matching Sensu event severity conditions
+    #    Provide limit string to set inventory limit, empty string is replaced with entity name
+    io.sensu.ansible.config.actions: |
+      [
+        {
+          "template_name": "NGINX Server Stand Up",
+          "inventory_name": "Webinar",
+          "limit": "", 
+          "occurrences": [ 3 ],
+          "severities": [ 1, 2 ]
+        },
+        {
+          "template_name": "All Good Here",
+          "inventory_name": "Webinar",
+          "limit": "",
+          "occurrences": [ 6 ],
+          "severities": [ 0 ]
+        }
+      ]
+spec:
+  command: >-
+    check-http.rb
+    --url {{ .annotations.check_http_url | default "http://127.0.0.1:80/" }}
+  runtime_assets:
+    - sensu-plugins/sensu-plugins-http
+    - sensu/sensu-ruby-runtime
+  publish: true
+  subscriptions:
+    - nginx
+  interval: 10
+  timeout: 5
+  stdin: false
+  handlers:
+    - ansible-tower  
+
