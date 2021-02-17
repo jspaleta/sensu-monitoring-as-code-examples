@@ -1,0 +1,8 @@
+---
+type: Namespace
+api_version: core/v2
+metadata:
+  name: monitoring-as-code
+spec:
+  name: monitoring-as-code
+

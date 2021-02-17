@@ -1,0 +1,29 @@
+# events but only for the master branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  sensuflow:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Sensuflow with defaults
+      uses: ./
+      id: defaults
+      with:
+        sensu_backend_url: ${{ secrets.SENSU_BACKEND_URL }}
+        sensu_user: ${{ secrets.SENSU_USER }}
+        sensu_password: ${{ secrets.SENSU_PASSWORD }} 
+        matching_label: "sensu.io/workflow"
+        matching_condition: "== sensu_flow"
+
