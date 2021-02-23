@@ -3,8 +3,7 @@ type: CheckConfig
 api_version: core/v2
 metadata:
   labels:
-    sensu.io/workflow: sensu_flow
-    #sensu.io/wrong: sensu_flow
+    sensu.io/workflow: sensuflow
   name: system-profile-linux
   #namespace: bad_namespace  
 spec:
@@ -31,7 +30,7 @@ metadata:
     io.sensu.bonsai.url: https://bonsai.sensu.io/assets/sensu/system-profile-linux
     io.sensu.bonsai.version: 0.10.1
   labels:
-    sensu.io/workflow: sensu_flow
+    sensu.io/workflow: sensuflow
   name: sensu/system-profile-linux
 spec:
   builds:

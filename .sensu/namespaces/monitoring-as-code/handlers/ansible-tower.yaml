@@ -56,7 +56,7 @@ type: Handler
 api_version: core/v2
 metadata:
   labels:
-    sensu.io/managed_by: sensuctl
+    sensu.io/workflow: sensuflow
   name: ansible-tower
 spec:
   command: sensu-ansible-handler --host ${ANSIBLE_HOST} -j "Remediation Fallback Example" --insecure-skip-tls-verify -i Webinar
@@ -83,7 +83,7 @@ metadata:
     io.sensu.bonsai.url: https://bonsai.sensu.io/assets/sensu/sensu-ansible-handler
     io.sensu.bonsai.version: 2.1.0
   labels:
-    sensu.io/managed_by: sensuctl
+    sensu.io/workflow: sensuflow
   name: sensu/sensu-ansible-handler:2.1.0
 spec:
   builds:

@@ -25,5 +25,5 @@ jobs:
         sensu_user: ${{ secrets.SENSU_USER }}
         sensu_password: ${{ secrets.SENSU_PASSWORD }} 
         matching_label: "sensu.io/workflow"
-        matching_condition: "== sensu_flow"
+        matching_condition: "== sensuflow"
 

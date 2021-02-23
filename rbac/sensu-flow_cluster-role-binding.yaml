@@ -1,0 +1,12 @@
+type: ClusterRoleBinding
+api_version: core/v2
+metadata:
+  created_by: admin
+  name: sensu-flow
+spec:
+  role_ref:
+    name: sensu-flow
+    type: ClusterRole
+  subjects:
+  - name: sensu-flow
+    type: Group

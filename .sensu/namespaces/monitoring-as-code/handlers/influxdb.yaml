@@ -49,7 +49,7 @@ api_version: core/v2
 metadata:
   name: influxdb
   labels:
-    sensu.io/workflow: sensu_flow  
+    sensu.io/workflow: sensuflow  
 spec:
   type: pipe
   command: sensu-influxdb-handler -d $INFLUXDB_DB
@@ -73,7 +73,7 @@ api_version: secrets/v1
 metadata:
   name: influxdb_addr
   labels:
-    sensu.io/workflow: sensu_flow  
+    sensu.io/workflow: sensuflow  
 spec:
   provider: env
   id: INFLUXDB_ADDR
@@ -83,7 +83,7 @@ api_version: secrets/v1
 metadata:
   name: influxdb_db
   labels:
-    sensu.io/workflow: sensu_flow  
+    sensu.io/workflow: sensuflow  
 spec:
   provider: env
   id: INFLUXDB_DB
@@ -93,7 +93,7 @@ api_version: secrets/v1
 metadata:
   name: influxdb_user
   labels:
-    sensu.io/workflow: sensu_flow  
+    sensu.io/workflow: sensuflow  
 spec:
   provider: env
   id: INFLUXDB_USER
@@ -103,7 +103,7 @@ api_version: secrets/v1
 metadata:
   name: influxdb_password
   labels:
-    sensu.io/workflow: sensu_flow  
+    sensu.io/workflow: sensuflow  
 spec:
   provider: env
   id: INFLUXDB_PASSWORD
@@ -121,7 +121,7 @@ metadata:
     io.sensu.bonsai.version: 3.1.2
   name: sensu/sensu-influxdb-handler:3.1.2
   labels:
-    sensu.io/workflow: sensu_flow  
+    sensu.io/workflow: sensuflow  
 spec:
   builds:
   - filters:

@@ -1,0 +1,25 @@
+type: ClusterRole
+api_version: core/v2
+metadata:
+  created_by: admin
+  name: sensu-flow
+spec:
+  rules:
+  - resource_names: null
+    resources:
+    - namespaces
+    - roles
+    - rolebindings
+    - assets
+    - handlers
+    - checks
+    - filters
+    - mutators
+    - hooks
+    - secrets
+    verbs:
+    - get
+    - list
+    - create
+    - update
+    - delete

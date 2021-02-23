@@ -1,0 +1,18 @@
+---
+type: CheckConfig
+api_version: core/v2
+metadata:
+  labels:
+    sensu.io/workflow: sensu_flow
+  name: purge-check
+  annotations:
+spec:
+  command: >-
+    echo "purge check"
+  publish: false
+  subscriptions:
+    - perge
+  interval: 10
+  timeout: 5
+  stdin: false
+
