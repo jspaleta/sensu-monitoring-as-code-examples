@@ -5,4 +5,11 @@ metadata:
   name: monitoring-as-code
 spec:
   name: monitoring-as-code
+---
+type: Namespace
+api_version: core/v2
+metadata:
+  name: team2
+spec:
+  name: team2
 
