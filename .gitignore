@@ -1,3 +1,7 @@
+.password
+.password.*
 .env
 *.env
 .envrc
+*notes.txt
+*.swp
